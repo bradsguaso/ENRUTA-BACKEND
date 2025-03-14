@@ -26,6 +26,11 @@ def login(request):
 
 
 @api_view(['POST'])
+def profile(request):
+    return Response({})
+
+
+@api_view(['POST'])
 def register(request):
     serializer = CustomUserSerializer(data=request.data)
     if serializer.is_valid():
@@ -42,5 +47,5 @@ def register(request):
 
 
 @api_view(['POST'])
-def profile(request):
-    return Response({})
+def logout(request):
+    return Response({"Deslogueado"})
